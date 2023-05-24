@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    container_name: sq-nginx
+    image: marketplace.gcr.io/google/nginx1
+    ports:
+      - '80:8080'
+      - '443:443'
+    volumes:
+      - /C//Users/loren/OneDrive/Desktop/estg_sem2/SW-Quality/pipeline_app/cypress-example-kitchensink:/usr/share/nginx/html
