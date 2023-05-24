@@ -43,7 +43,7 @@ pipeline {
                         verbose: true)])
          }
         }
-        stage('Run automated tests'){
+        //stage('Run automated tests'){
             // steps {
             //   echo "Running automated tests"
             //     sh 'npm prune'
@@ -66,7 +66,7 @@ pipeline {
 
             //     }
             // }
-        }
+        //}
 
        
         stage('Perform manual testing...'){
