@@ -44,7 +44,7 @@
     "ci:set-port": "node ./scripts/set-port",
     "semantic-release": "semantic-release",
     "prepare": "node ./scripts/prepare.js",
-    "e2e:staging1spec": "cypress run --config baseUrl=<replace this text by the URL of your staging server> --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome"
+    "e2e:staging1spec": "cypress run --config baseUrl=http://104.199.18.46/ --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome"
   },
   "repository": {
     "type": "git",
