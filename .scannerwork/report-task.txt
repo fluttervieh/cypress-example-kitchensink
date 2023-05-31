@@ -1,0 +1,6 @@
+projectKey=sq_pt2_2223614
+serverUrl=https://sonar.creis.pt
+serverVersion=8.3.1.34397
+dashboardUrl=https://sonar.creis.pt/dashboard?id=sq_pt2_2223614
+ceTaskId=AYhydIEcycD9pccTjLXj
+ceTaskUrl=https://sonar.creis.pt/api/ce/task?id=AYhydIEcycD9pccTjLXj
