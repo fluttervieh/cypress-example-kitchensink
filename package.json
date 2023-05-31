@@ -43,7 +43,8 @@
     "local:run:record": "start-test 8080 cy:run:record",
     "ci:set-port": "node ./scripts/set-port",
     "semantic-release": "semantic-release",
-    "prepare": "node ./scripts/prepare.js"
+    "prepare": "node ./scripts/prepare.js",
+    "e2e:staging1spec": "cypress run --config baseUrl=<replace this text by the URL of your staging server> --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -78,4 +79,5 @@
   "engines": {
     "node": "^14.0.0 || ^16.0.0 || >=18.0.0"
   }
+  
 }

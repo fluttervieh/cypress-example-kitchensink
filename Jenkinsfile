@@ -3,7 +3,6 @@ pipeline {
 
       tools {nodejs "nodetest"}
 
-
       parameters{
           string(name: 'SPEC', defaultValue:"cypress/integration/1-getting-started/todo.spec.js", description: "Enter the cypress script path that you want to execute")
           choice(name: 'BROWSER', choices:['electron', 'chrome', 'edge', 'firefox'], description: "Select the browser to be used in your cypress tests")
@@ -43,30 +42,30 @@ pipeline {
                         verbose: true)])
          }
         }
-        //stage('Run automated tests'){
-            // steps {
-            //   echo "Running automated tests"
-            //     sh 'npm prune'
-            //     sh 'npm cache clean --force'
-            //     sh 'npm i'
-            //     sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-            //     sh 'npm run e2e:staging1spec'
-            // }
-            // post {
-            //     success {
-            //         publishHTML (
-            //             target : [
-            //                 allowMissing: false,
-            //                 alwaysLinkToLastBuild: true,
-            //                 keepAll: true,
-            //                 reportDir: 'mochawesome-report',
-            //                 reportFiles: 'mochawesome.html',
-            //                 reportName: 'My Reports',
-            //                 reportTitles: 'The Report'])
+        stage('Run automated tests'){
+            steps {
+              echo "Running automated tests"
+                sh 'npm prune'
+                sh 'npm cache clean --force'
+                sh 'npm i'
+                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+                sh 'npm run e2e:staging1spec'
+            }
+            post {
+                success {
+                    publishHTML (
+                        target : [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'mochawesome-report',
+                            reportFiles: 'mochawesome.html',
+                            reportName: 'My Reports',
+                            reportTitles: 'The Report'])
 
-            //     }
-            // }
-        //}
+                }
+            }
+        }
 
        
         stage('Perform manual testing...'){
